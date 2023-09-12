@@ -96,7 +96,7 @@
 
       const addClassToTitle = function () {
         const title = document.getElementsByTagName("h1")[0];
-        title.classList.add("headings-class");
+        title.classList.add("myHeading");
       };
       addClassToTitle();
 
@@ -105,8 +105,10 @@
         */
 
       const changePcontent = function () {
-        const paragraphs = document.querySelector("div > p");
-        paragraphs.innerText = "Questi sono due paragrafi";
+        const paragraphs = document.querySelectorAll("div p");
+        paragraphs.forEach((p) => {
+          p.innerText = "New-paragraphs";
+        });
       };
       changePcontent();
 
@@ -123,6 +125,14 @@
       /* ESERCIZIO 5
          Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
       */
+
+      const addToTheSecond = function () {
+        const list = document.getElementById("secondList");
+        const newLi = document.createElement("li");
+        newLi.innerText = "4th";
+        list.appendChild(newLi);
+      };
+      addToTheSecond();
 
       /* ESERCIZIO 6
          Scrivi una funzione che aggiunga un secondo paragrafo al primo div
@@ -175,12 +185,10 @@
         */
 
       const revealFooterLink = function () {
-        const ft = document.getElementsByTagName("footer")[0];
-        alert(
-          "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
-        );
+        const footera = document.querySelector("footer a");
+        const adressValue = footera.getAttribute("href");
+        alert(adressValue);
       };
-      revealFooterLink();
 
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
